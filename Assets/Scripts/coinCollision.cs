@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class coinCollision : MonoBehaviour
 {
@@ -11,8 +12,15 @@ public class coinCollision : MonoBehaviour
         if(col.gameObject.name == "Coin")
         {
             Destroy(col.gameObject);
+            int score = ++playerScript.GetComponent<Player>().score;
+            Debug.Log("score");
+
+            
+
         }
-        playerScript.GetComponent<Player>().score++;
+
+
+        
 
     }
 }
