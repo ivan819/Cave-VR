@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class coinCollision : MonoBehaviour
 {
+    public Player playerScript;
     void OnCollisionEnter(Collision col)
     {
         Debug.Log("trigger");
@@ -11,6 +12,7 @@ public class coinCollision : MonoBehaviour
         {
             Destroy(col.gameObject);
         }
-      
+        playerScript.GetComponent<Player>().score++;
+
     }
 }
